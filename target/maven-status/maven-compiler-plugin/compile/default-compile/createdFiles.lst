@@ -1,0 +1,4 @@
+se/tre/oauth/config/AuthorizationServerConfig.class
+se/tre/oauth/controller/WelcomeApi.class
+se/tre/oauth/config/EmployeeSecurityConfiguration.class
+se/tre/oauth/SpringBootResourceServerApplication.class
