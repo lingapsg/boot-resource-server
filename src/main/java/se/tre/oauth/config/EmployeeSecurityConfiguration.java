@@ -27,8 +27,8 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
 
     @Override
     public void configure(AuthenticationManagerBuilder authenticationMgr) throws Exception {
-        authenticationMgr.inMemoryAuthentication().withUser("46793355833").password("testuser")
-                .and().withUser("46005213420").password("testuser")
+        authenticationMgr.inMemoryAuthentication().withUser("46793355833").password("testuser").roles("ADMIN")
+                .and().withUser("46005213420").password("testuser").roles("ADMIN")
                 .authorities("ROLE_ADMIN");
     }
 }
