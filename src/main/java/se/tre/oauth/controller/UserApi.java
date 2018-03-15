@@ -22,7 +22,7 @@ public class UserApi {
         if (user != null) {
             LOGGER.info("user :"+user.getName());
             User userDetails = new User(user.getName());
-            return ResponseEntity.ok(ImmutableMap.of("user", userDetails));
+            return ResponseEntity.ok(userDetails);
         }
         return ResponseEntity.ok().build();
     }
