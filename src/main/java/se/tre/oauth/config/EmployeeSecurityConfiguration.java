@@ -18,8 +18,8 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/user/getEmployeesList", "/user/info")
-                .hasAnyRole("ADMIN").anyRequest().authenticated().and().formLogin()
+        http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/user/getEmployeesList")
+                .hasAnyRole("ADMIN").anyRequest().fullyAuthenticated().and().formLogin()
                 .permitAll().and().logout().permitAll();
 
         http.csrf().disable();

@@ -12,14 +12,15 @@ import se.tre.oauth.domain.User;
 import java.security.Principal;
 
 @RestController
+@RequestMapping("/user")
 public class UserApi {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserApi.class);
 
-    @RequestMapping(value = "/user/info", method = RequestMethod.GET)
+    @RequestMapping(value = "info", method = RequestMethod.GET)
     public ResponseEntity getUserDetails(Principal user) {
         if (user != null) {
-            LOGGER.info("user "+user.getName());
+            LOGGER.info("user :"+user.getName());
             User userDetails = new User(user.getName());
             return ResponseEntity.ok(ImmutableMap.of("user", userDetails));
         }
