@@ -19,15 +19,16 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/user/getEmployeesList", "/user/info")
-            .hasAnyRole("ADMIN").anyRequest().authenticated().and().formLogin()
-            .permitAll().and().logout().permitAll();
+                .hasAnyRole("ADMIN").anyRequest().authenticated().and().formLogin()
+                .permitAll().and().logout().permitAll();
 
         http.csrf().disable();
     }
 
     @Override
     public void configure(AuthenticationManagerBuilder authenticationMgr) throws Exception {
-        authenticationMgr.inMemoryAuthentication().withUser("admin").password("admin")
-            .authorities("ROLE_ADMIN");
+        authenticationMgr.inMemoryAuthentication().withUser("46793355833").password("testuser")
+                .and().withUser("46005213420").password("testuser")
+                .authorities("ROLE_ADMIN");
     }
 }
