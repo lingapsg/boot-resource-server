@@ -31,6 +31,8 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .withUser("46793355833").password("testuser").roles("ADMIN")
                 .and()
                 .withUser("46765829569").password("testuser").roles("ADMIN")
+                .and()
+                .withUser("46700981996").password("testuser").roles("ADMIN")
                 .authorities("ROLE_ADMIN");
     }
 }
